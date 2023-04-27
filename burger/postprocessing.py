@@ -48,6 +48,11 @@ plt.savefig(f"figs/{data_name}_Loss")
 pred = data["pred"]
 ref = data["ref"]
 names = ["U","V","P"]
+
+
+
+error = np.mean((np.linalg.norm(ref-pred,2))**2)/((np.linalg.norm(ref,2))**2) 
+print(error*100)
 # %%
 
 fig,axs = plt.subplots(2,2,figsize=(14,7),sharex=True,sharey=True)
